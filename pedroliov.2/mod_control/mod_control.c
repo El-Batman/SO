@@ -21,10 +21,7 @@ void mod_setup() {
     assert(setup == 0);
     setup = 1;
     cancelled = 0;
-    for (int i = 0; i <= PROCESSORS_COUNT; i++){
-      pthread_create(&thread, NULL, &worker, NULL);
-      pthread_cond_wait();
-    }
+    pthread_create(&thread, NULL, &worker, NULL);
 }
 
 char* mod_name() {
