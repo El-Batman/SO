@@ -13,6 +13,7 @@ static void* worker(void* ignored) {
         rock_t rock = pd_read();
         oil_t oil = pd_process(rock);
         pd_deliver(oil);
+
     }
     return NULL;
 }

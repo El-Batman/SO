@@ -32,6 +32,6 @@ int main(int argc, char** argv) {
     final = sum;
     mod_shutdown();
     printf("%s produced %.2f monetary units\n", mod_name(), final);
-    
+
     return 0;
 }
