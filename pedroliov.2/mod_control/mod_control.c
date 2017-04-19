@@ -21,11 +21,14 @@ void mod_setup() {
     assert(setup == 0);
     setup = 1;
     cancelled = 0;
-    pthread_create(&thread, NULL, &worker, NULL);
+    for (int i = 0; i <= PROCESSORS_COUNT; i++){
+      pthread_create(&thread, NULL, &worker, NULL);
+      pthread_cond_wait();
+    }
 }
 
 char* mod_name() {
-    return "control";
+    return "Wayne Corp Oil";
 }
 
 void mod_shutdown() {
